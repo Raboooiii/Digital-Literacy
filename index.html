@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiEmpower - Digital Literacy for All</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Accessibility Controls -->
+    <div class="accessibility-bar">
+        <button id="font-increase" title="Increase Font Size">A+</button>
+        <button id="font-decrease" title="Decrease Font Size">A-</button>
+        <button id="font-reset" title="Reset Font Size">A</button>
+        <select id="language-selector" title="Select Language">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="ta">தமிழ்</option>
+            <option value="te">తెలుగు</option>
+        </select>
+        <button id="voice-command-btn" title="Voice Commands"><i class="fas fa-microphone"></i></button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="DigiEmpower Logo" class="logo">
+            <h1>DigiEmpower <span>Empowering Digital Literacy!</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#tutorials">Tutorials</a></li>
+                <li><a href="#digibuddy">DigiBuddy</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to DigiEmpower!</h2>
+                <p>Your friendly guide to mastering digital tools and apps. We make technology simple and fun for everyone!</p>
+                <div class="hero-buttons">
+                    <a href="#tutorials" class="btn">Explore Tutorials</a>
+                    <a href="#digibuddy" class="btn secondary">Chat with DigiBuddy</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero-bg.png" alt="Happy seniors using technology">
+            </div>
+        </section>
+
+        <!-- Tutorials Section -->
+        <section id="tutorials" class="section">
+            <h2>Learn Digital Tools Easily</h2>
+            <p class="section-description">Select any tutorial below to start your digital journey</p>
+            
+            <div class="tutorial-cards">
+                <!-- WhatsApp Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                    </div>
+                    <div class="card-image">
+                        <img src="assets/images/whatsapp.png" alt="WhatsApp Tutorial">
+                    </div>
+                    <div class="card-content">
+                        <p>Learn how to send messages, make calls, and share media with your loved ones.</p>
+                        <button class="btn tutorial-btn" data-tutorial="whatsapp">Start Learning</button>
+                    </div>
+                </div>
+                
+                <!-- Paytm Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-rupee-sign"></i>
+                        <h3>Paytm</h3>
+                    </div>
+                    <div class="card-image">
+                        <img src="assets/images/paytm.png" alt="Paytm Tutorial">
+                    </div>
+                    <div class="card-content">
+                        <p>Master digital payments, mobile recharges, and online transactions safely.</p>
+                        <button class="btn tutorial-btn" data-tutorial="paytm">Start Learning</button>
+                    </div>
+                </div>
+                
+                <!-- Google Maps Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Google Maps</h3>
+                    </div>
+                    <div class="card-image">
+                        <img src="assets/images/google.png" alt="Google Maps Tutorial">
+                    </div>
+                    <div class="card-content">
+                        <p>Navigate anywhere with confidence using maps, directions, and location sharing.</p>
+                        <button class="btn tutorial-btn" data-tutorial="maps">Start Learning</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tutorial-modal" id="tutorial-modal">
+                <div class="modal-content">
+                    <button class="close-modal">&times;</button>
+                    <h3 id="modal-title">WhatsApp Tutorial</h3>
+                    <div class="video-container">
+                        <video id="tutorial-video" controls>
+                            <source src="assets/videos/whatsapp-guide.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="tutorial-steps">
+                        <h4>Step-by-Step Guide</h4>
+                        <ol id="tutorial-steps-list">
+                            <!-- Steps will be loaded dynamically -->
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DigiBuddy Chatbot Section -->
+        <section id="digibuddy" class="section">
+            <h2>Meet DigiBuddy</h2>
+            <p class="section-description">Your friendly digital assistant ready to help with any questions!</p>
+            
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <div class="chatbot-avatar">
+                        <img src="https://ui-avatars.com/api/?name=DigiBuddy&background=4e73df&color=fff" alt="DigiBuddy Avatar">
+                    </div>
+                    <div class="chatbot-info">
+                        <h3>DigiBuddy</h3>
+                        <p class="status"><span class="status-indicator"></span> Online</p>
+                    </div>
+                    <button class="chatbot-minimize"><i class="fas fa-minus"></i></button>
+                </div>
+                
+                <div class="chatbot-messages" id="chatbot-messages">
+                    <div class="message bot-message">
+                        <p>Hello there! 👋 I'm DigiBuddy, your friendly digital assistant. How can I help you today?</p>
+                    </div>
+                </div>
+                
+                <div class="chatbot-input">
+                    <input type="text" id="user-input" placeholder="Type your question here..." aria-label="Type your question">
+                    <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+                    <button id="voice-input" title="Voice Input"><i class="fas fa-microphone"></i></button>
+                </div>
+                
+                <div class="quick-questions">
+                    <p>Quick questions:</p>
+                    <button class="quick-question">How to video call on WhatsApp?</button>
+                    <button class="quick-question">How to pay with Paytm?</button>
+                    <button class="quick-question">How to use Google Maps?</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback" class="section">
+            <h2>Your Feedback Matters</h2>
+            <p class="section-description">Help us improve by sharing your thoughts and suggestions</p>
+            
+            <form id="feedback-form" class="feedback-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email (optional):</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedback-type">Feedback Type:</label>
+                    <select id="feedback-type" name="feedback-type">
+                        <option value="suggestion">Suggestion</option>
+                        <option value="compliment">Compliment</option>
+                        <option value="issue">Issue</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Feedback:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <div class="form-group rating-group">
+                    <label>How would you rate your experience?</label>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1"><i class="fas fa-star"></i></label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">Submit Feedback</button>
+            </form>
+            
+            <div class="thank-you-message" id="thank-you-message">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank You!</h3>
+                <p>We appreciate your feedback and will use it to improve our platform.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About DigiEmpower</h3>
+                <p>We're committed to bridging the digital divide by making technology accessible to everyone, regardless of age or background.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#tutorials">Tutorials</a></li>
+                    <li><a href="#digibuddy">DigiBuddy</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> help@digiempower.com</p>
+                <p><i class="fas fa-phone"></i> +1 (800) 123-4567</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 DigiEmpower. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Help Button -->
+    <button class="floating-help-btn" id="floating-help-btn">
+        <i class="fas fa-question"></i>
+        <span>Help</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
